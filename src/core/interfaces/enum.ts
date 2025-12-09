@@ -1,4 +1,11 @@
 export enum ContractStatus {
-  CURRENT = 'Vigente',
-  RESCINDED = 'Rescindido'
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+  PENDING = 'PENDING'
+}
+
+export enum RoleUser {
+  ADMIN = 'ADMIN',
+  FINANCE = 'FINANCE',
+  EMPLOYEE = 'EMPLOYEE'
 }

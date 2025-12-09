@@ -6,7 +6,8 @@ export class Client extends BaseEntity {
     tenantId: string,
     public code: number,
     public nickname: string,
-    public companyName: string
+    public companyName: string,
+    private CNPJ: string 
   ) {
     super(id, tenantId);
   }
