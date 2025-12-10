@@ -2,13 +2,12 @@ import { BaseEntity } from './BaseEntity';
 
 export class Client extends BaseEntity {
   constructor(
-    id: string | null,
-    tenantId: string,
-    public code: number,
+    id: number | null,
+    public code: number | null,
     public nickname: string,
     public companyName: string,
-    private CNPJ: string 
+    public cnpj: string 
   ) {
-    super(id, tenantId);
+    super(id);
   }
 }

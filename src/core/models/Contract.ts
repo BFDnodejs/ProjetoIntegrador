@@ -3,11 +3,10 @@ import { ContractStatus } from '../interfaces/enum';
 
 export class Contract extends BaseEntity {
   constructor(
-    id: string | null,
-    tenantId: string,
-    public contractCode: string,  public clientCode: number,
-    public clientNickname: string,
-    public serviceCode: string,
+    id: number | null,
+    public contractCode: string,
+    public clientId: number,
+    public serviceId: number,
     public quantity: number,
     public unitPrice: number,
     public startDate: Date,
@@ -15,6 +14,6 @@ export class Contract extends BaseEntity {
     public status: ContractStatus,
     public observation: string | null
   ) {
-    super(id, tenantId);
+    super(id);
   }
 }

@@ -1,7 +1,6 @@
-import { IBaseEntity } from './IBaseEntity';
+import { User } from '../models/User';
+import { IBaseRepository } from './IBaseEntity';
 
-export interface IUser extends IBaseEntity {
-  email: string;
-  passwordHash: string;
-  role: string;
+export interface IUserRepository extends IBaseRepository<User> {
+  findByEmail(email: string): Promise<User | null>;
 }

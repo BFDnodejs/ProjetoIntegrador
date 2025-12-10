@@ -1,5 +1,6 @@
-
-export interface IBaseEntity {
-  readonly id: string | null;
-  readonly tenantId: string;
+export interface IBaseRepository<T> {
+  save(entity: T): Promise<T>;
+  findById(id: number): Promise<T | null>;
+  delete(id: number): Promise<void>;
+  listAll(): Promise<T[]>;
 }

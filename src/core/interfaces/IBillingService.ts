@@ -1,7 +1,6 @@
-import { IContract } from './IContracts';
+import { Contract } from '../models/Contract';
 
 export interface IBillingService {
-  calculateTotalValue(contract: IContract): number;
-  calculateDaysUntilEnd(contract: IContract): number;
-  generateMonthlyInvoice(tenantId: string, month: number, year: number): void;
+  calculateMonthlyValue(contract: Contract): number;
+  generateInvoice(contractId: number, month: Date): Promise<string>;
 }

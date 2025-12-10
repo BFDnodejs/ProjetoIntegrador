@@ -1,15 +1,7 @@
-import { IBaseEntity } from './IBaseEntity';
-import { ContractStatus } from './enum';
+import { Contract } from '../models/Contract';
+import { IBaseRepository } from './IBaseEntity';
 
-export interface IContract extends IBaseEntity {
-  contractCode: string;
-  clientCode: number;
-  clientNickname: string;
-  serviceCode: string;
-  quantity: number;
-  unitPrice: number;
-  startDate: Date;
-  endDate: Date | null;
-  status: ContractStatus;
-  observation: string | null;
+export interface IContractRepository extends IBaseRepository<Contract> {
+  findByCode(code: string): Promise<Contract | null>;
+  findByClientId(clientId: number): Promise<Contract[]>;
 }

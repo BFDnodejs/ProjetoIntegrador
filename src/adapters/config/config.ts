@@ -1,9 +1,9 @@
 import mysql from "mysql2/promise";
 import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({path: "../../../.env"});
 
-const { PORT, NODE_ENV, DB_HOST, DB_USER, DB_NAME, DB_PASS } = process.env;
+const { DB_HOST, DB_USER, DB_NAME, DB_PASS } = process.env;
 
 export const pool = mysql.createPool({
   host: DB_HOST,

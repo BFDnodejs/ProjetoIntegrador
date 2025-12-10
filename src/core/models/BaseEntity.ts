@@ -1,6 +1,5 @@
 export abstract class BaseEntity {
   constructor(
-    public readonly id: string | null,
-    public readonly tenantId: string
+    public readonly id: number | null
   ) {}
 }

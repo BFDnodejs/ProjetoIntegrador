@@ -1,14 +1,13 @@
 import { BaseEntity } from './BaseEntity';
-import { RoleUser } from '../interfaces/enum';
+
 
 export class User extends BaseEntity {
   constructor(
-    id: string | null,
-    tenantId: string,
+    id: number | null,
     public email: string,
     public passwordHash: string,
-    public role: RoleUser
+    public role: "EMPLOYEE"
   ) {
-    super(id, tenantId);
+    super(id);
   }
 }
