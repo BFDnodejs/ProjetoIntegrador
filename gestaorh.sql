@@ -17,15 +17,14 @@ default_price DECIMAL(10, 2),
 UNIQUE KEY uk_service_code_tenant (code, tenant_id)
 );
 
-create table user (
-id VARCHAR(100) PRIMARY KEY,
-tenant_id VARCHAR(100),
-email VARCHAR(255),
-password_hash VARCHAR(255),
-role ENUM ('ADMIN', 'EMPLOYEE', 'FINANCE'),
-UNIQUE KEY uk_email_tenant (email, tenant_id)
+CREATE TABLE `user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(255) NOT NULL,
+  `password_hash` VARCHAR(300) NOT NULL,
+  `role` ENUM('ADMIN', 'EMPLOYEE', 'FINANCE') DEFAULT 'EMPLOYEE',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_email` (`email`)
 );
-
 create table contract (
 id VARCHAR(100) PRIMARY KEY,
 tenant_id VARCHAR(100),
