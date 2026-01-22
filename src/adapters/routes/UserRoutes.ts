@@ -3,7 +3,6 @@ import { UserController } from "../../controller/UserController";
 import { UserRepository } from "../../repositories/UserRepository";
 import { UserService } from "../../services/UserService";
 import { AuthenticateUserService } from "../../services/AuthenticateUserService";
-import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 
 const router = Router();
 const userRepository = new UserRepository();
